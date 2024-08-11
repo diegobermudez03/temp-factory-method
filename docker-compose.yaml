@@ -1,0 +1,22 @@
+services:
+  postgres-database:
+    image : postgres:latest
+    restart: always
+    ports :
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: patrones
+      POSTGRES_USER: patrones
+      POSTGRES_DB: factory_method
+  mysql-database:
+    image : mysql:latest
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: patrones
+      MYSQL_DATABASE: factory_method
+  adminer:
+    image : adminer
+    ports :
+      - "8080:8080"
